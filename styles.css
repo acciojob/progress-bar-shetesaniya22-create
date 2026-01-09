@@ -1,1 +1,77 @@
 /*  your css code here. If applicable */
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-family: Arial;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 350px;
+  margin-bottom: 30px;
+}
+
+/* Background line */
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #ccc;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* Active progress line */
+#progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  background: #4caf50;
+  width: 0%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.3s;
+}
+
+/* Circles */
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ccc;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ccc;
+}
+
+.circle.active {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+
+button {
+  padding: 8px 20px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+button:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+}
